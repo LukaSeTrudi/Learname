@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/StartingScene.unity
+    guid: b5a294f1e3ad466489f70c30397b9200
+  - enabled: 1
+    path: Assets/Scenes/CategoryScene.unity
+    guid: 3060356bffc179d4d9c30d42e74815a0
+  - enabled: 1
+    path: Assets/Scenes/MathScene.unity
+    guid: f739ca18a7a36784f860bfad362dba4e
+  - enabled: 1
+    path: Assets/Scenes/SloveneScene.unity
+    guid: 5409e1017c1be5044ba3ea62d43a3763
+  - enabled: 1
+    path: Assets/Scenes/RunnerGame.unity
+    guid: a6d08030654bc7d4499c1d3c51845a88
+  - enabled: 1
+    path: Assets/Scenes/SloveneGames/Sentences/SentencesMenu.unity
+    guid: 42673ae19999e2c438a7f2b8a672984a
+  - enabled: 0
+    path: Assets/Scenes/SloveneGames/Sentences/Sentences.unity
+    guid: ed36148db927e434490d479a1e4454e9
+  - enabled: 1
+    path: Assets/Scenes/SloveneGames/Sentences/BegginerSentences.unity
+    guid: a15e8c73c0cd45e4f986d1e203d62600
+  m_configObjects: {}

@@ -1,0 +1,62 @@
+
+GetReady.png
+size: 527,388
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Images/!
+  rotate: false
+  xy: 444, 175
+  size: 73, 211
+  orig: 100, 273
+  offset: 13, 44
+  index: -1
+Images/G
+  rotate: false
+  xy: 2, 203
+  size: 140, 183
+  orig: 150, 245
+  offset: 5, 45
+  index: -1
+Images/R
+  rotate: false
+  xy: 2, 22
+  size: 133, 179
+  orig: 150, 245
+  offset: 8, 48
+  index: -1
+Images/a
+  rotate: false
+  xy: 144, 213
+  size: 149, 173
+  orig: 160, 245
+  offset: 5, 50
+  index: -1
+Images/d
+  rotate: false
+  xy: 269, 40
+  size: 129, 171
+  orig: 150, 245
+  offset: 10, 50
+  index: -1
+Images/e
+  rotate: false
+  xy: 137, 21
+  size: 130, 180
+  orig: 150, 245
+  offset: 10, 45
+  index: -1
+Images/t
+  rotate: false
+  xy: 400, 2
+  size: 125, 171
+  orig: 150, 245
+  offset: 12, 50
+  index: -1
+Images/y
+  rotate: false
+  xy: 295, 216
+  size: 147, 170
+  orig: 160, 245
+  offset: 6, 49
+  index: -1

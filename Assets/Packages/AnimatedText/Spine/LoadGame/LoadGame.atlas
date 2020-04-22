@@ -1,0 +1,55 @@
+
+LoadGame.png
+size: 1001,187
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Images/A
+  rotate: false
+  xy: 195, 12
+  size: 149, 173
+  orig: 160, 245
+  offset: 5, 50
+  index: -1
+Images/D
+  rotate: false
+  xy: 764, 14
+  size: 129, 171
+  orig: 140, 245
+  offset: 5, 50
+  index: -1
+Images/E
+  rotate: false
+  xy: 488, 5
+  size: 130, 180
+  orig: 150, 245
+  offset: 10, 45
+  index: -1
+Images/G
+  rotate: false
+  xy: 346, 2
+  size: 140, 183
+  orig: 150, 245
+  offset: 5, 45
+  index: -1
+Images/L
+  rotate: false
+  xy: 895, 13
+  size: 104, 172
+  orig: 150, 245
+  offset: 23, 53
+  index: -1
+Images/M
+  rotate: false
+  xy: 2, 10
+  size: 191, 175
+  orig: 220, 245
+  offset: 14, 50
+  index: -1
+Images/O
+  rotate: false
+  xy: 620, 21
+  size: 142, 164
+  orig: 150, 245
+  offset: 4, 51
+  index: -1
