@@ -11,6 +11,10 @@ public class PlayerControllerFood : MonoBehaviour
     public Camera cam;
     public static bool paused;
 
+    public AudioSource effect;
+    public AudioClip good;
+    public AudioClip bad;
+
     public GameObject endGame;
 
     public string current_correct;
@@ -55,21 +59,23 @@ public class PlayerControllerFood : MonoBehaviour
         if(other.gameObject.tag == "Food"){
             GameObject go = other.gameObject;
             if(go.GetComponent<FoodPrefab>().name == current_correct){
+                effect.PlayOneShot(good);
                 score++;
                 result.text=score.ToString();
                 genNewFood();
             } else{
-                
+                effect.PlayOneShot(bad);
                 lifes--;
                 Destroy(GameObject.Find("Life"));
                 cam.GetComponent<CameraShake>().TriggerShake();
                 if(lifes == 0){
                     //end game
-                    if(score > PlayerPrefs.GetInt("FoodCollectorHighscore")){
+                    int hs =PlayerPrefs.GetInt("FoodCollectorHighscore");
+                    if(score > hs){
                         PlayerPrefs.SetInt("FoodCollectorHighscore", score);
                     }
                     paused = true;
-                    endGame.GetComponent<GameOverManagaer>().SetScore(score, PlayerPrefs.GetInt("FoodCollectorHighscore"));
+                    endGame.GetComponent<GameOverManagaer>().SetScore(score, hs);
                     endGame.SetActive(true);
                 }
             }

@@ -23,7 +23,7 @@ public class SentencePreset : MonoBehaviour
         textObject.GetComponent<Text>().text = value;
         horSize = textObject.GetComponent<Text>().preferredWidth;
         rt1 = (RectTransform)gameObject.transform;
-        rt1.sizeDelta = new Vector2(horSize+20, rt1.sizeDelta.y);
+        rt1.sizeDelta = new Vector2(horSize+100, rt1.sizeDelta.y);
         gameObject.GetComponent<Image>().color = UnityEngine.Random.ColorHSV();
     }
     void clickOnElement(){

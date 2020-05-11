@@ -16,11 +16,17 @@ public class MusicSettings : MonoBehaviour
         }
         sound_value = PlayerPrefs.GetFloat(pref);
         sl = gameObject.GetComponent<Slider>();
+        if(pref == "music"){
+            sound_value = sound_value * 2;
+        }
         sl.value = sound_value;
     }
 
     public void onChangeVal(){
         float val = GetComponent<Slider>().value;
+        if(pref == "music") { // za manjšo glasnost glasbe
+            val = val/2;
+        }
         PlayerPrefs.SetFloat(pref, val);
     }
 }

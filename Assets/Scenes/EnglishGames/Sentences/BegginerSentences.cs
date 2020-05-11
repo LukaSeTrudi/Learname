@@ -9,17 +9,36 @@ public class BegginerSentences : MonoBehaviour
     public GameObject textPrefab;
     public Camera cam;
     public float cas = 20.0f;
+
+    public GameObject music;
+
+    public AudioSource effect;
+    public AudioClip good;
+    public AudioClip bad;
+
     private float timeLeft = 20.0f;
     private int currentIndex = 0;
-    private List<string> sentences = new List<string>() {
+    public List<string> sentences = new List<string>() {
         "Please speak more slowly.",
         "He really makes me angry.",
-        "I think you're right. I'm getting tired.",
+        "It's not just a game.",
         "What do you do on Sunday?",
-        "She felt insecure about her future.",
-        "You press this button here.",
+        "Its not just a game.",
+        "I don't think i want to know.",
         "Let me introduce myself.",
         "Will it rain tomorrow?",
+        "We never actually met.",
+        "Tom isn't skinny.",
+        "She lost money.",
+        "I'm not dishonest.",
+        "Pleasure to meet you, Doctor.",
+        "Tom's car hit a tree.",
+        "You're a good person.",
+        "Did you all hear that?",
+        "Tom left the party early.",
+        "Sit near here.",
+        "It looks like I messed up.",
+        "So what do I do?",
     };
 
     private int currentLevel = 0;
@@ -30,19 +49,28 @@ public class BegginerSentences : MonoBehaviour
     
     public void checkValid(string str, GameObject obj){
         if(str == sentences[currentLevel].Split(' ')[currentIndex]){
+            effect.PlayOneShot(good);
             currentIndex++;
             finalText.text += str + "    ";
             Destroy(obj);
             if(currentIndex == sentences[currentLevel].Split(' ').Length){
                 PlayerPrefs.SetInt("BegginerLevel", currentLevel+1);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                if(currentLevel+1 < sentences.Count){        
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                } else SceneManager.LoadScene("SentencesMenu");
             }
         } else {
-            timeLeft -= 1.0f;
+            effect.PlayOneShot(bad);
+            timeLeft -= 3.0f;
             cam.GetComponent<CameraShake>().TriggerShake();
         }
     }
     public void Start() {
+        if(GameObject.FindGameObjectsWithTag("music").Length == 1){
+            DontDestroyOnLoad(music);
+        } else {
+            Destroy(music);
+        }
         timeLeft = cas;
         
         timeObject = GameObject.Find("Game/Time");
@@ -73,7 +101,9 @@ public class BegginerSentences : MonoBehaviour
     public void Update() {
         timeLeft -= Time.deltaTime;
         rectTime.sizeDelta = new Vector2(map(timeLeft,0,cas, 0, maxWidth), rectTime.sizeDelta.y);
-      
+        if(rectTime.sizeDelta.x < 0){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     float map(float s, float a1, float a2, float b1, float b2)

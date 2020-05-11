@@ -10,17 +10,27 @@ public class MenuController : MonoBehaviour
     public Text level;
     public string pref;
     public int maxSentences;
-    
+    public Button btn;
+
     private int lvl;
     void Start()
     {
         lvl = PlayerPrefs.GetInt(pref);
         level.text = lvl + " / " + maxSentences;
         smth_image.fillAmount = (float)lvl/maxSentences;
+        if(lvl >= maxSentences){
+            btn.interactable = false;
+        } else btn.interactable = true;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void resetPlayerPref(){
+        PlayerPrefs.DeleteKey(pref);
+        lvl = PlayerPrefs.GetInt(pref);
+        level.text = lvl + " / " + maxSentences;
+        smth_image.fillAmount = (float)lvl/maxSentences;
+        if(lvl >= maxSentences){
+            btn.interactable = false;
+        } else {
+            btn.interactable = true;
+        }
     }
 }

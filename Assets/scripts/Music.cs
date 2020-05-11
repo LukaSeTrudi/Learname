@@ -4,36 +4,44 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
-     private AudioSource _audioSource;
-     public string _pref;
+     private AudioSource _music;
+     private AudioSource _effect;
+
+    public GameObject bgMusic;
+    public GameObject bgEffect;
+
      private void Awake()
      {
-        int numMusicPlayers = GameObject.FindGameObjectsWithTag(_pref).Length;
-        if (numMusicPlayers != 1)
-        {
-            Destroy(this.gameObject);
+        if(GameObject.Find("sentenceMusic") != null){
+            Destroy(GameObject.Find("sentenceMusic"));
         }
-        else
+        if (GameObject.Find("bgMusic(Clone)") == null)
         {
-            DontDestroyOnLoad(gameObject);
+            Instantiate(bgMusic);
         }
-         _audioSource = GetComponent<AudioSource>();
+        DontDestroyOnLoad(GameObject.Find("bgMusic(Clone)"));
+        if (GameObject.Find("bgEffect") == null)
+        {
+            Instantiate(bgEffect);
+        }
+        DontDestroyOnLoad(GameObject.Find("bgEffect(Clone)"));
+        updateMusic();
      }
     public void updateMusic(){
-        AudioSource _mus = GameObject.Find("bgMusic").GetComponent<AudioSource>();
-        AudioSource _eff = GameObject.Find("bgEffect").GetComponent<AudioSource>();
+        _music = GameObject.Find("bgMusic(Clone)").GetComponent<AudioSource>();
+        _effect = GameObject.Find("bgEffect(Clone)").GetComponent<AudioSource>();
     
-        _mus.volume = PlayerPrefs.GetFloat("music")/2;
-        _eff.volume = PlayerPrefs.GetFloat("effect");
+        _music.volume = PlayerPrefs.GetFloat("music");
+        _effect.volume = PlayerPrefs.GetFloat("effect");
     }
      public void PlayMusic()
      {
-         if (_audioSource.isPlaying) return;
-         _audioSource.Play();
+         if (_music.isPlaying) return;
+         _music.Play();
      }
  
      public void StopMusic()
      {
-         _audioSource.Stop();
+         _music.Stop();
      }
 }

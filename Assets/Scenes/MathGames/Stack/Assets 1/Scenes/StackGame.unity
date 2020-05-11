@@ -1122,10 +1122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 907001777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f74911e4ef2534c8b3b4f3494666ed, type: 3}
+  m_Script: {fileID: 11500000, guid: c76e7bac56bcfe248a5fb79fd2c3b67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pref: 
+  pref: music
 --- !u!1 &941544557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,10 +1847,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509509305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f74911e4ef2534c8b3b4f3494666ed, type: 3}
+  m_Script: {fileID: 11500000, guid: c76e7bac56bcfe248a5fb79fd2c3b67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pref: 
+  pref: effect
 --- !u!1 &1545129348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,6 +2553,7 @@ MonoBehaviour:
   addPoint: {fileID: 8300000, guid: c078b7f884b147e48ba7ef713159ab34, type: 3}
   success: {fileID: 8300000, guid: b662dab6c0d62a241b8ce0372ebc958b, type: 3}
   fail: {fileID: 8300000, guid: d589ac776601405458d51e9662518876, type: 3}
+  cam: {fileID: 0}
   scoreText: {fileID: 559511084}
   gameColors:
   - serializedVersion: 2

@@ -10,14 +10,7 @@ public class GetHighscore : MonoBehaviour
 
     void Start()
     {
-        gameObject.GetComponent<Text>().text = "Highscore: " + PlayerPrefs.GetInt(pref);
-        gameObject.GetComponent<Text>().text = "Highscore: " + PlayerPrefs.GetFloat(pref);       
+        gameObject.GetComponent<Text>().text = "Highscore: " + PlayerPrefs.GetInt(pref);       
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        gameObject.GetComponent<Text>().text = "Highscore: " + PlayerPrefs.GetFloat(pref).ToString();
-        
-    }
 }

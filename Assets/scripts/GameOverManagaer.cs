@@ -10,6 +10,6 @@ public class GameOverManagaer : MonoBehaviour
 
     public void SetScore(int score, int highScore){
         _score.text = "Score: " + score.ToString();
-        _highScore.text = "Highscore: " + highScore.ToString();
+        _highScore.text = "Highscore: " + highScore;
     }
 }
